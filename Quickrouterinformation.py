@@ -3,6 +3,7 @@ import platform
 import subprocess
 import csv
 import re
+import random # Added random library
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QWidget, QLabel, QLineEdit, QTextEdit,
     QPushButton, QFileDialog, QVBoxLayout, QHBoxLayout, QGridLayout
@@ -114,7 +115,11 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Quick Router information Tool- Areef Rakhangi")
         self.setGeometry(100, 100, 900, 600)
-
+        # Generate a random color
+        r = random.randint(100, 255)
+        g = random.randint(100, 255)
+        b = random.randint(100, 255)
+        self.setStyleSheet(f"background-color: rgb({r},{g},{b});")
         # Widgets
         self.host_input = QLineEdit()
         self.host_input.setPlaceholderText("Enter hostname, IP, or URL")
